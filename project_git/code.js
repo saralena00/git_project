@@ -3,21 +3,10 @@ const rand = `/animals/rand/`
 
 $.getJSON(url + rand, (data) => {
   console.log(data)
- $('')
+  $('.gallery').html(`<img src="${data.image_link}">`)
+
 })
 
 
 
 
-
-$('.gallery img').click( function () {
-  const img_src = $(this).attr('src')
-
-  // console.log(img_src)
-  $(`
-  <div class="lightbox">
-    <img src="${img_src}">
-    <div class="close">x</div>
-  </div>`)
-  .appendTo('body')
-} )
